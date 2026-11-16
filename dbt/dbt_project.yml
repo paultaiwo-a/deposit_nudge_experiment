@@ -1,0 +1,13 @@
+name: deposit_nudge
+version: "1.0.0"
+profile: deposit_nudge
+
+model-paths: ["models"]
+test-paths: ["tests"]
+
+models:
+  deposit_nudge:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

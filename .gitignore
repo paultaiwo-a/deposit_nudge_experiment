@@ -13,6 +13,7 @@ data/raw/*
 dbt/target/
 dbt/logs/
 dbt/dbt_packages/
+dbt/.user.yml
 logs/
 
 .DS_Store
