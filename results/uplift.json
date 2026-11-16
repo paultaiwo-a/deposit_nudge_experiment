@@ -1,0 +1,244 @@
+{
+  "mens_email": {
+    "qini_auc": -0.02177374339842183,
+    "uplift_at_30pct": 0.005664219949934237,
+    "average_uplift": 0.006727158948685857,
+    "segments": [
+      {
+        "segment": "history_segment = 6) $750 - $1,000",
+        "users": 373,
+        "predicted_uplift": 0.009436391569085798,
+        "observed_uplift": 0.03006456820016142
+      },
+      {
+        "segment": "channel = Multichannel",
+        "users": 1567,
+        "predicted_uplift": 0.008669839791836604,
+        "observed_uplift": 0.0064672726680350566
+      },
+      {
+        "segment": "history_segment = 4) $350 - $500",
+        "users": 1261,
+        "predicted_uplift": 0.008073357538557872,
+        "observed_uplift": 0.012663195230548638
+      },
+      {
+        "segment": "history_segment = 3) $200 - $350",
+        "users": 2407,
+        "predicted_uplift": 0.007598165375603333,
+        "observed_uplift": 0.006459288187132242
+      },
+      {
+        "segment": "bought_womens = 1",
+        "users": 6976,
+        "predicted_uplift": 0.007209333573069805,
+        "observed_uplift": 0.006154525754306084
+      },
+      {
+        "segment": "history_segment = 5) $500 - $750",
+        "users": 996,
+        "predicted_uplift": 0.007082924747571254,
+        "observed_uplift": 0.013947861852053468
+      },
+      {
+        "segment": "bought_mens = 0",
+        "users": 5696,
+        "predicted_uplift": 0.007079672775870094,
+        "observed_uplift": 0.004332861726819615
+      },
+      {
+        "segment": "channel = Web",
+        "users": 5658,
+        "predicted_uplift": 0.007071144212402486,
+        "observed_uplift": 0.006843275494575368
+      },
+      {
+        "segment": "zip_code = Urban",
+        "users": 5179,
+        "predicted_uplift": 0.006937844850146083,
+        "observed_uplift": 0.006383583570803637
+      },
+      {
+        "segment": "newbie = 1",
+        "users": 6351,
+        "predicted_uplift": 0.0068660790586678256,
+        "observed_uplift": 0.009340697593464993
+      },
+      {
+        "segment": "zip_code = Surburban",
+        "users": 5687,
+        "predicted_uplift": 0.006856764006373225,
+        "observed_uplift": 0.00802644073850626
+      },
+      {
+        "segment": "history_segment = 1) $0 - $100",
+        "users": 4657,
+        "predicted_uplift": 0.006730891407480577,
+        "observed_uplift": 0.0022131108233827265
+      },
+      {
+        "segment": "newbie = 0",
+        "users": 6433,
+        "predicted_uplift": 0.006717374818371974,
+        "observed_uplift": 0.004191925157601965
+      },
+      {
+        "segment": "bought_mens = 1",
+        "users": 7088,
+        "predicted_uplift": 0.006559470115241282,
+        "observed_uplift": 0.00861019951021573
+      },
+      {
+        "segment": "bought_womens = 0",
+        "users": 5808,
+        "predicted_uplift": 0.006289089067226464,
+        "observed_uplift": 0.007422155301970652
+      },
+      {
+        "segment": "zip_code = Rural",
+        "users": 1918,
+        "predicted_uplift": 0.006201160023480277,
+        "observed_uplift": 0.0038419701518513693
+      },
+      {
+        "segment": "channel = Phone",
+        "users": 5559,
+        "predicted_uplift": 0.0059768245009183376,
+        "observed_uplift": 0.006680710061377713
+      },
+      {
+        "segment": "history_segment = 2) $100 - $200",
+        "users": 2838,
+        "predicted_uplift": 0.0056930282324525695,
+        "observed_uplift": 0.005763485508092173
+      },
+      {
+        "segment": "history_segment = 7) $1,000 +",
+        "users": 252,
+        "predicted_uplift": 0.0010837693682545749,
+        "observed_uplift": 0.007308467741935484
+      }
+    ]
+  },
+  "womens_email": {
+    "qini_auc": 0.08471875413776929,
+    "uplift_at_30pct": 0.006596467371045325,
+    "average_uplift": 0.0030955542932406153,
+    "segments": [
+      {
+        "segment": "history_segment = 7) $1,000 +",
+        "users": 270,
+        "predicted_uplift": 0.013044582967823133,
+        "observed_uplift": 0.011268228015908086
+      },
+      {
+        "segment": "history_segment = 6) $750 - $1,000",
+        "users": 349,
+        "predicted_uplift": 0.009600504949322703,
+        "observed_uplift": 0.011792142950991985
+      },
+      {
+        "segment": "history_segment = 5) $500 - $750",
+        "users": 988,
+        "predicted_uplift": 0.005241075728061218,
+        "observed_uplift": 0.01623537607310427
+      },
+      {
+        "segment": "bought_womens = 1",
+        "users": 7002,
+        "predicted_uplift": 0.00486853111984272,
+        "observed_uplift": 0.0046289191429744175
+      },
+      {
+        "segment": "bought_mens = 0",
+        "users": 5719,
+        "predicted_uplift": 0.004752438692036584,
+        "observed_uplift": 0.005309047468094349
+      },
+      {
+        "segment": "channel = Multichannel",
+        "users": 1549,
+        "predicted_uplift": 0.004167279976854996,
+        "observed_uplift": 0.013331799217600977
+      },
+      {
+        "segment": "newbie = 1",
+        "users": 6416,
+        "predicted_uplift": 0.0040298406598633825,
+        "observed_uplift": 0.0038878373645868844
+      },
+      {
+        "segment": "history_segment = 1) $0 - $100",
+        "users": 4667,
+        "predicted_uplift": 0.004022401784307328,
+        "observed_uplift": -0.0003987012366900638
+      },
+      {
+        "segment": "zip_code = Rural",
+        "users": 1880,
+        "predicted_uplift": 0.003747097211129584,
+        "observed_uplift": 0.003191489361702128
+      },
+      {
+        "segment": "channel = Web",
+        "users": 5583,
+        "predicted_uplift": 0.003422858013727912,
+        "observed_uplift": 0.002878677943541878
+      },
+      {
+        "segment": "zip_code = Urban",
+        "users": 5162,
+        "predicted_uplift": 0.003123068897064947,
+        "observed_uplift": 0.005680917306888451
+      },
+      {
+        "segment": "zip_code = Surburban",
+        "users": 5766,
+        "predicted_uplift": 0.0029752080609706045,
+        "observed_uplift": 0.000846281895632935
+      },
+      {
+        "segment": "history_segment = 2) $100 - $200",
+        "users": 2836,
+        "predicted_uplift": 0.002927147442351351,
+        "observed_uplift": 0.0029256418431444138
+      },
+      {
+        "segment": "channel = Phone",
+        "users": 5676,
+        "predicted_uplift": 0.002599707735788946,
+        "observed_uplift": 0.0005907979310897172
+      },
+      {
+        "segment": "newbie = 0",
+        "users": 6392,
+        "predicted_uplift": 0.002263050126634217,
+        "observed_uplift": 0.002455895760585953
+      },
+      {
+        "segment": "bought_mens = 1",
+        "users": 7089,
+        "predicted_uplift": 0.001853812555137841,
+        "observed_uplift": 0.001319039637893332
+      },
+      {
+        "segment": "history_segment = 4) $350 - $500",
+        "users": 1272,
+        "predicted_uplift": 0.0015640255615431181,
+        "observed_uplift": 0.0029372496662216276
+      },
+      {
+        "segment": "bought_womens = 0",
+        "users": 5806,
+        "predicted_uplift": 0.0010732723358578466,
+        "observed_uplift": 0.0012811455976402993
+      },
+      {
+        "segment": "history_segment = 3) $200 - $350",
+        "users": 2426,
+        "predicted_uplift": -0.00032700006305628673,
+        "observed_uplift": 0.0021883533915398627
+      }
+    ]
+  }
+}

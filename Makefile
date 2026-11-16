@@ -16,5 +16,6 @@ lint:
 readout:
 	uv run python scripts/run_analysis.py
 	uv run python scripts/peeking_simulation.py
+	uv run python scripts/uplift.py
 
 all: data dbt test readout

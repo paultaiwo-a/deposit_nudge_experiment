@@ -7,6 +7,7 @@ from abkit.msprt import always_valid_pvalues, msprt_log_lambda
 from abkit.multiple import holm
 from abkit.result import Result
 from abkit.srm import srm_check
+from abkit.uplift import t_learner_uplift
 from abkit.welch import welch_ttest
 from abkit.ztest import two_prop_ztest
 
@@ -19,6 +20,7 @@ __all__ = [
     "holm",
     "msprt_log_lambda",
     "srm_check",
+    "t_learner_uplift",
     "two_prop_ztest",
     "welch_ttest",
 ]
