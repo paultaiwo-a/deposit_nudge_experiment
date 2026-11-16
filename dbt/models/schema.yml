@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: stg_hillstrom
+    columns:
+      - name: user_id
+        data_tests: [unique, not_null]
+      - name: arm
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [control, mens_email, womens_email]
+
+  - name: fct_assignments
+    columns:
+      - name: user_id
+        data_tests: [unique, not_null]
+      - name: arm
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [control, mens_email, womens_email]
+
+  - name: fct_experiment_metrics
+    columns:
+      - name: user_id
+        data_tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fct_assignments')
+                field: user_id
+      - name: arm
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [control, mens_email, womens_email]
+      - name: funded
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [0, 1]
+                quote: false
+      - name: visited
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [0, 1]
+                quote: false
