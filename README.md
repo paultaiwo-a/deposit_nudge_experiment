@@ -97,8 +97,8 @@ This project uses uv.
 
 ```bash
 uv sync
-make all
-make app
+uv run python run.py all
+uv run python run.py app
 ```
 
-`make all` downloads the data, builds the tables, runs the tests, and writes the charts in `results/`. `make app` opens the same readout in a small web app.
+`python run.py all` downloads the data, builds the tables, runs the tests, and writes the charts in `results/`. `python run.py app` opens the same readout in a small web app.

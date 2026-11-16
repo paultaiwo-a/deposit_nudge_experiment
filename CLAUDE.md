@@ -21,4 +21,4 @@ uv, DuckDB, dbt-duckdb, polars, scipy, statsmodels, scikit-learn, sklift, stream
 - Pure functions in src/abkit with type hints and docstrings.
 - Every stats function gets a test against a hand-computed or simulated answer.
 - Don't look at outcome metrics before docs/experiment_brief.md is committed.
-- Run `make test` before every commit. Use conventional commit messages.
+- Run `uv run python run.py test` before every commit. Use conventional commit messages.
