@@ -71,20 +71,18 @@ The men's email model does not beat sending the email to everyone. The women's e
 
 ### Discussion and Conclusion
 
-> CUPED did not help. Prior-year deposits correlate about 0.02 with deposits during the test, so the interval got less than 0.1% narrower. A better covariate would be deposits in the weeks just before the test.
->
-> The guardrail is weak. Only about 120 to 270 customers per group funded an account, so the interval for deposit per funded customer is about plus or minus 20%. The men's email passes the rule as it was written, but the data cannot rule out a drop of that size.
->
-> The cost of the match is not included. Extra deposits are not the same thing as profit.
->
-> The window is two weeks. It is not known whether funded accounts stay active, or whether the effect fades if the email is sent again.
->
-> The source data is a retail email test used here as a deposit offer. The method carries over. The effect sizes should not be quoted as a fintech benchmark.
->
-> This analysis used one look at the end. If the next test is checked while it is still running, mSPRT should be used. In a simulation of 2,000 tests with no real difference, checking a z-test 100 times gave a 39% false positive rate, against about 3% for mSPRT.
+Using last year's deposits to reduce noise did not help. Those deposits correlate about 0.02 with deposits during the test, so the interval got less than 0.1% narrower. Deposits in the weeks just before the test would be a better input.
+
+The check on deposit size is weak. Only about 120 to 270 customers per group funded an account, so the interval is about plus or minus 20%. The men's email passes the rule as it was written, but the data cannot rule out a drop of that size.
+
+The cost of the match is not in the data, so extra deposits are not the same thing as profit. The window is two weeks, so it is not known whether the funded accounts stay active, or whether the effect fades if the email is sent again.
+
+The source data is a retail email test used here as a deposit offer. The method carries over. The effect sizes should not be quoted as a fintech benchmark.
+
+This analysis used one look at the end. If the next test is checked while it is still running, mSPRT should be used. In a simulation of 2,000 tests with no real difference, checking a z-test 100 times gave a 39% false positive rate, against about 3% for mSPRT.
 
 ![False Positives from Checking the Test Early](../results/peeking.png)
 
 ### Recommendation
 
-> Send the men's email to all eligible customers.
+Send the men's email to all eligible customers.

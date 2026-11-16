@@ -77,15 +77,15 @@ A model was fit to see if some customers respond more than others. For the men's
 
 ### Discussion and Conclusion
 
-> As it turns out, both emails increased the share of customers who funded an account, and the men's email had the larger lift. The funding rate went from 0.57% to 1.25% for the men's email, and the result is not close. The same pattern shows up in visits and in deposit per customer. What did not change is how much each funded customer deposited, so the gain is more customers depositing, not bigger deposits.
->
-> The guardrail on deposit size is weak. Only a few hundred customers in each group funded an account, so the confidence interval is about plus or minus 20%. The men's email still passes the rule that was written down beforehand.
->
-> Targeting did not improve on sending the men's email to everyone. CUPED also did not tighten the result, because the prior-year deposit is a poor predictor of the deposit in this two-week window.
+Both emails increased the share of customers who funded an account. The men's email had the larger lift. The funding rate went from 0.57% to 1.25%, and the result is not close. Visits and deposit per customer moved the same way. The size of each deposit did not change, so the gain is more customers depositing, not bigger deposits.
+
+The check on deposit size is weak. Only a few hundred customers in each group funded an account, so the confidence interval is about plus or minus 20%. The men's email still passes the rule that was written down beforehand.
+
+Targeting did not beat sending the men's email to everyone. Using last year's deposits to reduce noise did not help either, because those deposits barely predict what someone deposits in these two weeks.
 
 ### Recommendation
 
-> Send the men's email to all eligible customers. The women's email also worked, but the lift was smaller, and the rule was to send the email with the larger funding-rate lift. If the women's email is ever reused, it would be worth testing it on customers with more than $750 in prior-year deposits.
+Send the men's email to all eligible customers. The women's email also worked, but the lift was smaller, and the rule was to send the email with the larger funding-rate lift. If the women's email is ever reused, it would be worth testing it on customers with more than $750 in prior-year deposits.
 
 ### Further Work
 
