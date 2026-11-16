@@ -1,0 +1,8 @@
+{
+  "simulations": 2000,
+  "looks": 100,
+  "tau2": 0.01,
+  "single_look_fpr": 0.048,
+  "naive_peeking_fpr": 0.389,
+  "msprt_fpr": 0.029
+}
