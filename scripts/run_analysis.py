@@ -6,7 +6,6 @@ from pathlib import Path
 import duckdb
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.ticker import PercentFormatter
 
 from abkit import (
     Result,
@@ -24,7 +23,6 @@ OUT = Path("results")
 CONTROL = "control"
 ARMS = ["mens_email", "womens_email"]
 ARM_LABELS = {"mens_email": "Mens E-Mail", "womens_email": "Womens E-Mail"}
-ARM_COLORS = {"mens_email": "#2a78d6", "womens_email": "#eb6834"}
 METRIC_LABELS = {
     "funding_rate": "Funding rate",
     "visit_rate": "Visit rate",
@@ -95,42 +93,43 @@ def decide(results: dict, srm_ok: bool) -> str | None:
 
 
 def funding_chart(results: dict) -> plt.Figure:
-    labels = ["Control"] + [ARM_LABELS[a] for a in ARMS]
+    labels = ["No E-Mail", "Mens E-Mail", "Womens E-Mail"]
     base = results[ARMS[0]]["funding_rate"]["baseline"]
     rates = [base] + [base + results[a]["funding_rate"]["estimate"] for a in ARMS]
-    fig, ax = plt.subplots(figsize=(6, 4))
-    bars = ax.bar(labels, rates, color=["#8a8984"] + [ARM_COLORS[a] for a in ARMS])
-    ax.bar_label(bars, labels=[f"{r:.2%}" for r in rates])
-    ax.yaxis.set_major_formatter(PercentFormatter(1, decimals=1))
-    ax.set_title("Funding rate by arm")
-    ax.spines[["top", "right"]].set_visible(False)
+    fig, ax = plt.subplots(figsize=(10, 7))
+    ax.bar(labels, [r * 100 for r in rates])
+    ax.set_xlabel("Group")
+    ax.set_ylabel("Funding rate (%)")
+    ax.set_title("Funding Rate by Group")
+    ax.grid(True, axis="y")
     fig.tight_layout()
     return fig
 
 
 def lift_chart(results: dict) -> plt.Figure:
     metrics = list(METRIC_LABELS)
-    y = np.arange(len(metrics))
-    fig, ax = plt.subplots(figsize=(8, 4.5))
+    x = np.arange(len(metrics))
+    width = 0.35
+    fig, ax = plt.subplots(figsize=(10, 7))
     for i, arm in enumerate(ARMS):
         rows = [results[arm][m] for m in metrics]
-        est = np.array([r["rel_estimate"] for r in rows])
-        err = [est - [r["rel_ci_low"] for r in rows], [r["rel_ci_high"] for r in rows] - est]
-        ax.errorbar(
+        est = np.array([r["rel_estimate"] * 100 for r in rows])
+        low = np.array([r["rel_ci_low"] * 100 for r in rows])
+        high = np.array([r["rel_ci_high"] * 100 for r in rows])
+        ax.bar(
+            x + (i - 0.5) * width,
             est,
-            y + (i - 0.5) * 0.3,
-            xerr=err,
-            fmt="o",
-            color=ARM_COLORS[arm],
+            width,
+            yerr=[est - low, high - est],
+            capsize=4,
             label=ARM_LABELS[arm],
         )
-    ax.axvline(0, color="#52514e", linewidth=1)
-    ax.set_yticks(y, [METRIC_LABELS[m] for m in metrics])
-    ax.invert_yaxis()
-    ax.xaxis.set_major_formatter(PercentFormatter(1, decimals=0))
-    ax.set_title("Relative lift vs control, 95% CI")
-    ax.legend(loc="lower right", frameon=False)
-    ax.spines[["top", "right"]].set_visible(False)
+    ax.axhline(0, color="black", linewidth=1)
+    ax.set_xticks(x, [METRIC_LABELS[m] for m in metrics], rotation=20, ha="right")
+    ax.set_ylabel("Lift compared with no email (%)")
+    ax.set_title("Lift Compared with No Email")
+    ax.legend()
+    ax.grid(True, axis="y")
     fig.tight_layout()
     return fig
 

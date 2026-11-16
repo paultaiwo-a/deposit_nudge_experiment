@@ -19,7 +19,6 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 DB_PATH = "warehouse.duckdb"
 OUT = Path("results")
 ARMS = {"mens_email": "Mens E-Mail", "womens_email": "Womens E-Mail"}
-ARM_COLORS = {"mens_email": "#2a78d6", "womens_email": "#eb6834"}
 SEGMENTS = ["channel", "zip_code", "newbie", "history_segment", "bought_mens", "bought_womens"]
 FEATURES = ["recency", "pre_deposits", "bought_mens", "bought_womens", "newbie"]
 CATEGORICAL = ["zip_code", "channel"]
@@ -84,16 +83,16 @@ def run_arm(df: pd.DataFrame, arm: str) -> tuple[dict, pd.DataFrame]:
 
 
 def qini_chart(tests: dict[str, pd.DataFrame]) -> plt.Figure:
-    fig, ax = plt.subplots(figsize=(7, 4.5))
+    fig, ax = plt.subplots(figsize=(10, 7))
     for arm, test in tests.items():
         x, y = qini_curve(test.funded, test.uplift, test.treated)
-        ax.plot(x / x[-1], y, color=ARM_COLORS[arm], linewidth=2, label=f"{ARMS[arm]} model")
-        ax.plot([0, 1], [0, y[-1]], color=ARM_COLORS[arm], linestyle="--", linewidth=1)
-    ax.set_xlabel("Share of users targeted, highest predicted uplift first")
-    ax.set_ylabel("Incremental funded accounts")
-    ax.set_title("Qini curve on holdout (dashed = random targeting)")
-    ax.legend(frameon=False)
-    ax.spines[["top", "right"]].set_visible(False)
+        ax.plot(x / x[-1], y, marker=".", label=f"{ARMS[arm]} model")
+        ax.plot([0, 1], [0, y[-1]], linestyle="--", label=f"{ARMS[arm]} if targeted at random")
+    ax.set_xlabel("Share of users targeted")
+    ax.set_ylabel("Extra funded accounts")
+    ax.set_title("Qini Curve")
+    ax.legend()
+    ax.grid(True)
     fig.tight_layout()
     return fig
 

@@ -5,7 +5,6 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.ticker import PercentFormatter
 from scipy import stats
 
 from abkit import always_valid_pvalues
@@ -36,16 +35,15 @@ def simulate() -> tuple[np.ndarray, np.ndarray, np.ndarray]:
 
 
 def chart(n: np.ndarray, naive: np.ndarray, msprt: np.ndarray) -> plt.Figure:
-    fig, ax = plt.subplots(figsize=(7, 4))
-    ax.plot(n, naive, color="#eb6834", linewidth=2, label="Naive z-test, peeking every 100 users")
-    ax.plot(n, msprt, color="#2a78d6", linewidth=2, label="mSPRT, peeking every 100 users")
-    ax.axhline(ALPHA, color="#52514e", linestyle="--", linewidth=1, label="Target 5%")
-    ax.yaxis.set_major_formatter(PercentFormatter(1, decimals=0))
-    ax.set_xlabel("Users per arm")
-    ax.set_ylabel("False positive rate")
-    ax.set_title(f"A/A tests: false positives from peeking ({SIMS:,} simulations)")
-    ax.legend(frameon=False)
-    ax.spines[["top", "right"]].set_visible(False)
+    fig, ax = plt.subplots(figsize=(10, 7))
+    ax.plot(n, naive * 100, marker=".", label="Z-test, checked along the way")
+    ax.plot(n, msprt * 100, marker=".", label="mSPRT, checked along the way")
+    ax.axhline(ALPHA * 100, linestyle="--", color="black", label="5% line")
+    ax.set_xlabel("Users per group")
+    ax.set_ylabel("False positive rate (%)")
+    ax.set_title("False Positives from Checking the Test Early")
+    ax.legend()
+    ax.grid(True)
     fig.tight_layout()
     return fig
 
