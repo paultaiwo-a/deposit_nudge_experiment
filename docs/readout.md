@@ -2,7 +2,7 @@
 
 ##### Paul Taiwo-Adeyemo, November 2026
 
-This write-up follows the rules in [experiment_brief.md](experiment_brief.md). The numbers come from `results/` and can be rebuilt with `make all`.
+This write-up follows the rules in [experiment_brief.md](experiment_brief.md). The numbers come from `results/` and can be rebuilt with `python run.py all`.
 
 ### Decision
 
