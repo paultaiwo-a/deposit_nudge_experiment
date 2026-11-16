@@ -6,16 +6,17 @@ deposit-match promo: conversion = account funded, spend = deposit amount.
 Arms: Mens E-Mail, Womens E-Mail, No E-Mail (control).
 
 ## Stack
-uv, DuckDB, dbt-duckdb, polars, scipy, statsmodels, scikit-learn, sklift, streamlit, pytest.
+uv, DuckDB, dbt-duckdb, pandas, matplotlib, scipy, statsmodels, scikit-learn, scikit-uplift, pytest.
 
 ## Structure
 - data/raw/            raw CSV (gitignored)
 - dbt/                 staging -> fct_assignments -> fct_experiment_metrics
 - src/abkit/           reusable stats: power, srm, ztest, welch, bootstrap, cuped, delta_method, msprt, uplift
 - tests/               pytest for every abkit function, using known-answer cases
-- notebooks/           exploration only, never the source of truth
 - docs/                experiment_brief.md, readout.md
-- app/                 streamlit readout
+- results/             numbers and charts
+- scripts/             load, power, analysis, peeking, uplift
+- run.py               runs those steps
 
 ## Rules
 - Pure functions in src/abkit with type hints and docstrings.

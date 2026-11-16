@@ -37,10 +37,6 @@ def readout() -> None:
     run(["python", "scripts/uplift.py"])
 
 
-def app() -> None:
-    run(["streamlit", "run", "app/streamlit_app.py"])
-
-
 def all_steps() -> None:
     data()
     dbt()
@@ -54,7 +50,6 @@ COMMANDS = {
     "test": test,
     "lint": lint,
     "readout": readout,
-    "app": app,
     "all": all_steps,
 }
 
