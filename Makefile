@@ -1,4 +1,4 @@
-.PHONY: data dbt test lint readout all
+.PHONY: data dbt test lint readout app all
 
 data:
 	uv run python scripts/load_data.py
@@ -17,5 +17,8 @@ readout:
 	uv run python scripts/run_analysis.py
 	uv run python scripts/peeking_simulation.py
 	uv run python scripts/uplift.py
+
+app:
+	uv run streamlit run app/streamlit_app.py
 
 all: data dbt test readout
